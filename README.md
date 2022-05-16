@@ -34,7 +34,6 @@ THEN the password is either displayed in an alert or written to the page
 ```
 ## Screen Shots
 
-```
 The following images shows the web application and functionality:
 
 ![The Password Generator application displays a red button to "Generate Password".](/assets/images/landingPage.JPG)
@@ -43,4 +42,4 @@ The following images shows the web application and functionality:
 ![The PassWord Generator Questions.](/assets/images/lowerCaseQuestion.JPG)
 ![The PassWord Generator Questions.](/assets/images/specialCharacterQuestion.JPG)
 ![The PassWord Generator Questions.](/assets/images/numberQuestion.JPG)
-```
+
