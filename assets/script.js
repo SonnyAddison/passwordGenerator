@@ -10,13 +10,12 @@ var content  = {
   options: "",
 }
 //Questions that will be asked //
-var = questions {
-length: prompt("How many Characters do you want? Min 8 Max 128"),
-upper: confirm("Would you like Upper Case Letters?"),
-lower: confirm("Would you like Lower Case Letters?"),
-special: confirm("Would you like Special Characters?"),
-num: confirm("Would you like numbers?"),
-}
+
+var length = prompt("How many Characters do you want? Min 8 Max 128");
+var upper = confirm("Would you like Upper Case Letters?");
+var lower = confirm("Would you like Lower Case Letters?");
+var special = confirm("Would you like Special Characters?");
+var num =  confirm("Would you like numbers?");
 
 //Making sure all enough information is there//
 
