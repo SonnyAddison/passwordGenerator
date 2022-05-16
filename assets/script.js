@@ -13,34 +13,28 @@ var content  = {
 
 // Making random password //
 
-function start() {
-  // Making sure that the system does not work before questions asked //
-  event.preventDefault();
+function generatePassword() {  
   
-  //Making a holding area for the random information//
-  var randomPassword = "";
-
   //Questions that will be asked //
-  var length = prompt("How many Characters do you want? Min 8 Max 128");
-  var upper = confirm("Would you like Upper Case Letters?");
-  var lower = confirm("Would you like Lower Case Letters?");
-  var special = confirm("Would you like Special Characters?");
-  var num =  confirm("Would you like numbers?");
+  let length = prompt("How many Characters do you want? Min 8 Max 128");
+    if(length < 8 || length > 128) {
+    alert("Please select correct amount of Characters.");  
+    let length = prompt("How many Characters do you want? Min 8 Max 128");
+    }
+  
+  let upper = confirm("Would you like Upper Case Letters?");
+  let lower = confirm("Would you like Lower Case Letters?");
+  let special = confirm("Would you like Special Characters?");
+  let num =  confirm("Would you like numbers?");
 
   //Making sure all enough information is there//
-  if(length < 8 || > 128) {
-    alert("Please select correct amount of Characters.");
-    var length = prompt("How many Characters do you want? Min 8 Max 128");
-  }
-  else if (upper != true && lower !=true && special !=true && number !=true) {
+  if (upper != true && lower !=true && special !=true && num !=true) {
     alert("Please select at least two varables for password, thank you.");
-    var length = prompt("How many Characters do you want? Min 8 Max 128");
-    var upper = confirm("Would you like Upper Case Letters?");
-    var lower = confirm("Would you like Lower Case Letters?");
-    var special = confirm("Would you like Special Characters?");
-    var num = confirm("Would you like numbers?")
+    let upper = confirm("Would you like Upper Case Letters?");
+    let lower = confirm("Would you like Lower Case Letters?");
+    let special = confirm("Would you like Special Characters?");
+    let num =  confirm("Would you like numbers?");
   }
-
   //Password to allow for selctions//
   if (upper) {
     content.options += content.upperCase;
@@ -56,14 +50,13 @@ function start() {
   }
 
   //Magic happens with random password using what was selcect//
-  for (var 1= 0; i < length; i++) {
-    randomPassword += content.options.charAt(Math.floor(Math.random()*content.options.length));
+  for (var i = 0; i < length; i++) {
+    content.options.charAt(Math.floor(Math.random()*content.options.length));
   }
-  password.value = randomPassword;
+  
 }
 // Write password to the #password input
 function writePassword() {
-
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
