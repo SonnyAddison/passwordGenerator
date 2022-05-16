@@ -11,16 +11,16 @@ var content  = {
   options: "",
 }
 
-// Making random password //
+// Write password to the #password input
+function writePassword() {
+   var random = "";
 
-function generatePassword() {  
-  
-  //Questions that will be asked //
-  let length = prompt("How many Characters do you want? Min 8 Max 128");
-    if(length < 8 || length > 128) {
-    alert("Please select correct amount of Characters.");  
-    let length = prompt("How many Characters do you want? Min 8 Max 128");
-    }
+   //Questions that will be asked //
+   let length = prompt("How many Characters do you want? Min 8 Max 128");
+   if(length < 8 || length > 128) {
+   alert("Please select correct amount of Characters.");  
+   let length = prompt("How many Characters do you want? Min 8 Max 128");
+   }
   
   let upper = confirm("Would you like Upper Case Letters?");
   let lower = confirm("Would you like Lower Case Letters?");
@@ -35,32 +35,27 @@ function generatePassword() {
     let special = confirm("Would you like Special Characters?");
     let num =  confirm("Would you like numbers?");
   }
-  //Password to allow for selctions//
-  if (upper) {
-    content.options += content.upperCase;
-  } 
-  if (lower) {
-    content.options += content.lowerCase;
-  }
-  if (special) {
-    content.options += content.specialChararacters;
-  }
-  if (num) {
-    content.options += content.numberic;
-  }
 
-  //Magic happens with random password using what was selcect//
-  for (var i = 0; i < length; i++) {
-    content.options.charAt(Math.floor(Math.random()*content.options.length));
-  }
-  
-}
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+    //Password to allow for selctions//
+    if (upper) {
+      content.options += content.upperCase; 
+    } 
+    if (lower) {
+      content.options += content.lowerCase 
+    }
+    if (special) {
+      content.options += content.specialChararacters;
+    }
+    if (num) {
+      content.options += content.numberic;
+    }
 
-  passwordText.value = password;
+ //Magic happens with random password using what was selcect//
+ for (var i = 0; i < length; i++) {
+   random += content.options.charAt(Math.floor(Math.random()*content.options.length));
+ } 
+ password.value = random 
+ 
 }
 
 // Add event listener to generate button
