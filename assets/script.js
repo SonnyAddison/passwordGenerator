@@ -55,8 +55,7 @@ function writePassword() {
    random += content.options.charAt(Math.floor(Math.random()*content.options.length));
  } 
  password.value = random 
- 
-}
+ }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
