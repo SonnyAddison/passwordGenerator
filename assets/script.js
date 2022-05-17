@@ -28,8 +28,8 @@ function writePassword() {
   let num =  confirm("Would you like numbers?");
 
   //Making sure all enough information is there//
-  if (upper != true && lower !=true && special !=true && num !=true) {
-    alert("Please select at least two varables for password, thank you.");
+  if (upper != true && lower !=true && special !=true && num !=true || upper && lower && special !=true && num !=true || upper && lower !=true && special && num !=true || upper && lower !=true && special !=true && num || upper != true && lower && special && num !=true || upper != true && lower && special !=true && num || upper != true && lower !=true && special && num) {
+    alert("Please select at least three varables for password, thank you.");
     let upper = confirm("Would you like Upper Case Letters?");
     let lower = confirm("Would you like Lower Case Letters?");
     let special = confirm("Would you like Special Characters?");
@@ -52,7 +52,7 @@ function writePassword() {
     else if (upper && lower && special && !num) {
       content.options += content.upperCase + content.lowerCase + content.specialChararacters; 
     } 
-    
+
  //Magic happens with random password using what was selcect//
  for (var i = 0; i < length; i++) {
    random += content.options.charAt(Math.floor(Math.random()*content.options.length));
