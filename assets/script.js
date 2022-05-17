@@ -37,19 +37,22 @@ function writePassword() {
   }
 
     //Password to allow for selctions//
-    if (upper) {
-      content.options += content.upperCase; 
+    if (upper && lower && special && num) {
+      content.options += content.upperCase + content.lowerCase + content.specialChararacters + content.numberic; 
     } 
-    if (lower) {
-      content.options += content.lowerCase 
+    else if (!upper && lower && special && num) {
+      content.options += content.lowerCase + content.specialChararacters + content.numberic; 
     }
-    if (special) {
-      content.options += content.specialChararacters;
+    else if (upper && !lower && special && num) {
+      content.options += content.upperCase + content.specialChararacters + content.numberic;
     }
-    if (num) {
-      content.options += content.numberic;
+    else if (upper && lower && !special && num) {
+      content.options += content.upperCase + content.lowerCase + content.numberic;
     }
-
+    else if (upper && lower && special && !num) {
+      content.options += content.upperCase + content.lowerCase + content.specialChararacters; 
+    } 
+    
  //Magic happens with random password using what was selcect//
  for (var i = 0; i < length; i++) {
    random += content.options.charAt(Math.floor(Math.random()*content.options.length));
